@@ -1,1 +1,3 @@
-li.item:before{list-style-type: none;}
+li{
+    list-style-type: none;
+}

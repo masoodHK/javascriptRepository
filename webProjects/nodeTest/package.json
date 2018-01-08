@@ -8,5 +8,8 @@
   },
   "author": "Masood Hasan Khan",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "@angular/cli": "^1.6.3"
+  }
 }
