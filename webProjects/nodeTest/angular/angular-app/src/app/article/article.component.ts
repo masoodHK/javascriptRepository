@@ -4,7 +4,7 @@ import { Article } from './article.model';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css']
+  styleUrls: ['./article.component.css'],
 })
 export class ArticleComponent implements OnInit {
   @HostBinding('attr.class') cssClass = 'row wrapper';
