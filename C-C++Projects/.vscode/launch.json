@@ -6,6 +6,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
+            
             "program": "C:/MinGW/bin/gdb.exe",
             "args": [],
             "stopAtEntry": false,

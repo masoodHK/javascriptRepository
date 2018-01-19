@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <conio.h>
 #include <math.h>
+#include <string.h>
 //Called Functions
 int someFunction(int n1, int n2);
 //Function Descriptions
 int someFunction(int n1, int n2){
-     for(int i = 1; i <= n2; i++){
-         n1 = n1 + n2;
-     }
-     return n1;
+     return n1 + n2;
 }
 //Main Program
 void main(void){

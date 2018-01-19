@@ -1,4 +1,6 @@
-class test{
-    constructor(){}
+class test {
+    str: string;
+    constructor(){
+
     }
 }
