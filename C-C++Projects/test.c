@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <conio.h>
 #define MAX_NAME_SIZE 256
+
 void simple_welcome(void){
     char buffer[32]; // to hold the player's name
     printf("Please enter your name: ");
