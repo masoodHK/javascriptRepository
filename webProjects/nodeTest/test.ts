@@ -1,6 +1,6 @@
+let str: string;
 class test {
-    str: string;
     constructor(){
-
+        
     }
 }
