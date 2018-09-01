@@ -75,21 +75,21 @@ export default class Login extends Component {
                         <h1 className="App-title">Admin Panel</h1>
                     </header>
                     <div className="container">
-                        <form onSubmit={this.authenticate} className="form">
+                        <form onSubmit={this.authenticate} className="form row">
                             <h2>Login</h2>
-                            <div className="input-field">
+                            <div className="input-field col s12">
                                 <input
                                     type="email"
                                     value={this.state.inputUsername}
-                                    onChange={this.handleUsernameChange} 
-                                    placeholder="Email: admin@domain.com" />
+                                    onChange={this.handleUsernameChange}/>
+                                <span className="helper-text">Email</span>
                             </div>
-                            <div className="input-field">
+                            <div className="input-field col s12">
                                 <input
                                     type="password"
                                     value={this.state.inputPassword}
-                                    onChange={this.handlePasswordChange} 
-                                    placeholder="Password: admin"/>
+                                    onChange={this.handlePasswordChange}/>
+                                <span className="helper-text">Password</span>
                             </div>
                             <button type="submit" className="btn">Submit</button>
                         </form>

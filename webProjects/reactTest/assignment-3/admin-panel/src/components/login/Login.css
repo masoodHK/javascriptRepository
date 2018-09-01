@@ -2,3 +2,7 @@
     width: 40%;
     margin: 40px auto
 }
+.helper-text {
+    text-align: left;
+    font-size: 10px
+}

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './EmployeeTable.css';
 import swal from 'sweetalert';
 import Employee from './Employee';
 
@@ -122,7 +121,7 @@ export default class EmployeeTable extends Component {
     handleEmployeeNameChange(event) {
         this.setState({inputEmployeeName: event.target.value})
     }
-    
+
     editEmployeeData(employeeID) {
         const employee = this.state.listOfEmployees.filter(e => e.id === employeeID)
         console.log(employee)
@@ -223,29 +222,37 @@ export default class EmployeeTable extends Component {
             inputEmployeeJoiningDate } = this.state
         if(this.state.employeeFormStatus === true) {
             return (
-                <form onSubmit={this.submit}>
-                    <input
-                        type="text"
-                        placeholder="Employee Name"
-                        value={inputEmployeeName}
-                        onChange={this.handleEmployeeNameChange}/>
-                    <input
-                        type="email"
-                        placeholder="Employee Email"
-                        value={inputEmployeeEmail}
-                        onChange={this.handleEmployeeEmailChange}/>
-                    <input 
-                        type="number"
-                        placeholder="Employee Salary"
-                        value={inputEmployeeSalary}
-                        onChange={this.handleEmployeeSalaryChange}/>
-                    <input
-                        type="text"
-                        className="datepicker"
-                        value={inputEmployeeJoiningDate}
-                        onChange={this.handleEmployeeJoiningDateChange}/>
-                    <button className="btn" type="submit">Submit</button>
-                </form>
+                <div>
+                    <form onSubmit={this.submit}>
+                        <h1>Employee Form</h1>
+                        <input
+                            type="text"
+                            placeholder="Employee Name"
+                            value={inputEmployeeName}
+                            onChange={this.handleEmployeeNameChange}/>
+                        <span className="helper-text">Employee Name</span>
+                        <input
+                            type="email"
+                            placeholder="Employee Email"
+                            value={inputEmployeeEmail}
+                            onChange={this.handleEmployeeEmailChange}/>
+                        <span className="helper-text">Employee Email</span>
+                        <input 
+                            type="number"
+                            placeholder="Employee Salary"
+                            value={inputEmployeeSalary}
+                            onChange={this.handleEmployeeSalaryChange}/>
+                        <span className="helper-text">Employee Salary</span>
+                        <input
+                            type="text"
+                            className="datepicker"
+                            placeholder="Employee Joining Date"
+                            value={inputEmployeeJoiningDate}
+                            onChange={this.handleEmployeeJoiningDateChange}/>
+                        <div className="helper-text">Employee Joining Date</div>
+                        <button className="btn" type="submit">Submit</button>
+                    </form>
+                </div>
             )
         }
         
