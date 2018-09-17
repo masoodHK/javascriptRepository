@@ -88,9 +88,10 @@ class App extends Component {
             ],
             isLoggedIn: JSON.parse(localStorage.getItem("isLoggedIn")),
             quizStarted: JSON.parse(localStorage.getItem("quizStarted")),
-            quizInfo: [],
             username: "",
             password: "",
+            quizInfo: [],
+            quizIndex: 0,
             usernameSignUp: "",
             passwordSignUp: ""
         };
@@ -150,7 +151,23 @@ class App extends Component {
     showInfo(id) {
         const { quizList } = this.state
         let info = quizList.filter((data, index) => index === id);
-        this.setState({ quizInfo: info })
+        this.setState({ quizInfo: info, quizIndex: id })
+    }
+
+    goBack = () => {
+        localforage.setItem("quizInfo", [])
+        this.setState({quizInfo: []})
+    }
+
+    quizSubmitted = () => {
+        localStorage.setItem("quizStarted", false)
+        this.setState({quizStarted: false})
+        this.goBack()
+    }
+
+    startQuiz = () => {
+        localStorage.setItem("quizStarted", true)
+        this.setState({ quizStarted: true })
     }
 
     render() {
@@ -178,9 +195,20 @@ class App extends Component {
                             handlePassword={this.handlePasswordSignup}
                             function={this.signup} loggedIn={isLoggedIn}/>
                     </div>
-                    {quizInfo.length !== 0 && <QuizInfo loggedIn={isLoggedIn} info={quizInfo}/>}
-                    {quizInfo.length !== 0 && <QuizList loggedIn={isLoggedIn} quiz={quizList}/>}
-                    {quizInfo.length !== 0 && <QuizPage loggedIn={isLoggedIn} quizStarted={quizStarted} questions={quizInfo.questions} time={quizInfo.timer}/>}
+                    {(quizInfo.length !== 0 && !quizStarted) && <QuizInfo
+                                                loggedIn={isLoggedIn}
+                                                info={quizInfo}
+                                                index={this.state.quizIndex}
+                                                back={this.goBack}
+                                                start={this.startQuiz}/>}
+                    {(quizInfo.length === 0 && !quizStarted) && <QuizList
+                                                loggedIn={isLoggedIn}
+                                                quiz={quizList}
+                                                show={this.showInfo}/>}
+                    {(quizInfo.length !== 0 && quizStarted) && <QuizPage
+                                                info={quizInfo[0]}
+                                                time={quizInfo[0].timer}
+                                                submit={this.quizSubmitted}/>}
                 </div>
             </div>
         );

@@ -9,9 +9,10 @@ export default class QuizList extends Component {
                 <div>
                     {quiz.map((q, index) => {
                         return (
-                            <div key={index}>
+                            <div key={index} className="quiz">
                                 <h3>{q.title}</h3>
-                                <button className="pure-button pure-button-primary">
+								<button className="pure-button pure-button-primary"
+									onClick={() => this.props.show(index)}>
                                     Show Info
                                 </button>
                             </div>
