@@ -1,12 +1,10 @@
 {
-  "name": "quiz-app",
+  "name": "child-performance",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "localforage": "^1.7.2",
-    "mdbreact": "^4.7.1",
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-scripts": "1.1.5"
   },
   "scripts": {
