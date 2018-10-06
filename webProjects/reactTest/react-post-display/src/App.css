@@ -1,11 +1,78 @@
 .App {
-  text-align: center;
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.user-info {
+  text-align: left;
+  display: flex;
+}
+.user-info  > img {
+  border-radius: 100%;
+  width: 10%;
+}
+
+.user-info  > div {
+  margin-left: 10px;
+}
+
+.user-info  > div > p:first-child {
+  font-weight: bold;
+}
+
+.border {
+  border: 1px solid white;
+  border-radius: 0;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.display {
+  background: white;
+  padding: 2%;
+  width: 56%;
+  border-radius: 50px;
+}
+
+.display > * {
+  margin: 0 1%;
+}
+
+.post {
+  padding: 2%;
+}
+
+.comment  input {
+  width: 100%;
+  color: black;
+}
+
+.reaction {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.reaction > p {
+  width: 100%;
+}
+
+.background {
+  height: 30vw !important
+}
+
+.height-two.background {
+  height: 60vw !important;
+}
+
+@media screen and (max-width: 768px) {
+  .user-info  > img {
+    width: 15%;
+  }
 }
